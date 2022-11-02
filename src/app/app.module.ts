@@ -8,23 +8,26 @@ import { LoginComponent } from './Components/login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
-import { ResetPasswordComponent } from './reset-password/reset-password.component';
-import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { ForgotpasswordComponent } from './Components/forgotpassword/forgotpassword.component';
+import { ResetpasswordComponent } from './Components/resetpassword/resetpassword.component';
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   declarations: [
     AppComponent,
     RegisterComponent,
     LoginComponent,
-    ResetPasswordComponent,
-    ForgotPasswordComponent
+    ForgotpasswordComponent,
+    ResetpasswordComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatButtonModule
+  
   ],
   providers: [],
   bootstrap: [AppComponent]

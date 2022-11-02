@@ -17,27 +17,33 @@
             <p>Use your Fundoo Account</p>
         </div>
 
-        <div style="text-align: left;">
-            <mat-form-field appearance="outline">
+        <div class="email">
+            <mat-form-field appearance="outline" style="width: 44vh;">
                 <mat-label>Email or Phone</mat-label>
-                <input matInput placeholder=" Email or Phone">
+                <input matInput placeholder="Email or Phone">
             </mat-form-field>
         </div>
-        <div class="forgot">
-            <a href="#" class="my Account">Forgot email?</a>
-        </div>
 
+        <div style="text-align: left; margin: -5px;">
+            <mat-form-field appearance="outline"style="width: 44vh;">
+                <mat-label>Password</mat-label>
+                <input matInput placeholder="Password">
+            </mat-form-field>
+        </div>
+        <div >
+            <a href="#" class="linkProperty1">Forgot Password?</a>
+        </div>
+        <br/>
         <div>
-            <p><small>Not your computer? Use Guest mode to sign in privately.</small></p>
+            <p class="section-paragraph">Not your computer? Use a Private Window to sign in. </p>
+            <a href="#" class="linkProperty">Learn more </a>
         </div>
-        <div style="text-align: left;">
-            <a href="#" class="lm" target="_blank">Learn More</a>
+        <div fxLayout="row" fxLayoutAlign="space-between end" class="btn-layout">
+            <button mat-button color="primary" class="btn-property">Create
+                Account</button>
+            <button mat-raised-button class="btn-create">Next</button>
         </div>
-        <div style="text-align: left;">
-            <a href="#" class="my account" target="_blank">Create account</a>
-        </div>
-        <div>
-            <button class="next">Next</button>
-        </div>
+       
+        
     </div>
 </div>
