@@ -12,8 +12,15 @@ import { ResetpasswordComponent } from './Components/resetpassword/resetpassword
 import {MatButtonModule} from '@angular/material/button';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule} from '@angular/common/http';
-
-
+import { DashboardComponent } from './Components/dashboard/dashboard.component';
+import {MatListModule} from '@angular/material/list';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatIconModule} from '@angular/material/icon';
+import {MatExpansionModule} from '@angular/material/expansion';
+import { GetallnotesComponent } from './Components/getallnotes/getallnotes.component';
+import { ArchiveComponent } from './Components/archive/archive.component';
+import { TrashComponent } from './Components/trash/trash.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +29,12 @@ import { HttpClientModule} from '@angular/common/http';
     LoginComponent,
     ForgotpasswordComponent,
     ResetpasswordComponent,
-  
+    DashboardComponent,
+    GetallnotesComponent,
+    ArchiveComponent,
+    TrashComponent,
+ 
+
   ],
   imports: [
     BrowserModule,
@@ -32,8 +44,12 @@ import { HttpClientModule} from '@angular/common/http';
     MatInputModule,
     MatButtonModule,
     ReactiveFormsModule,
-    HttpClientModule
-  
+    HttpClientModule,
+    MatListModule,
+    MatSidenavModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatExpansionModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
