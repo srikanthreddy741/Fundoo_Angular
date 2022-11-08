@@ -1,6 +1,7 @@
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ArchiveComponent } from './Components/archive/archive.component';
+import { CreateNoteComponent } from './Components/create-note/create-note.component';
 import { DashboardComponent } from './Components/dashboard/dashboard.component';
 import { ForgotpasswordComponent } from './Components/forgotpassword/forgotpassword.component';
 import { GetallnotesComponent } from './Components/getallnotes/getallnotes.component';
@@ -17,6 +18,7 @@ const routes: Routes = [
 {path:'dashboard',component:DashboardComponent,
 children:[
   {path:'Notes',component:GetallnotesComponent},
+  {path:'create',component:CreateNoteComponent},
   {path:'Archive',component:ArchiveComponent},
   {path:'Trash',component:TrashComponent}
 ]

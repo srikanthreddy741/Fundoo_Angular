@@ -21,6 +21,9 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import { GetallnotesComponent } from './Components/getallnotes/getallnotes.component';
 import { ArchiveComponent } from './Components/archive/archive.component';
 import { TrashComponent } from './Components/trash/trash.component';
+import { CreateNoteComponent } from './Components/create-note/create-note.component';
+import { DisplayNoteComponent } from './Components/display-note/display-note.component';
+import { IconComponent } from './Components/icon/icon.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +36,9 @@ import { TrashComponent } from './Components/trash/trash.component';
     GetallnotesComponent,
     ArchiveComponent,
     TrashComponent,
+    CreateNoteComponent,
+    DisplayNoteComponent,
+    IconComponent,
  
 
   ],
@@ -50,6 +56,7 @@ import { TrashComponent } from './Components/trash/trash.component';
     MatToolbarModule,
     MatIconModule,
     MatExpansionModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,23 @@
+<form [formGroup]="createnoteForm">
+    <div class="OuterDiv">
+        <div class="InnerDiv">
+            <div *ngIf="Show">
+                <input class="search" formControlName="title" placeholder="Title">
+            </div>
+            <div *ngIf="!Show || Show" (click)="isshow()">
+                <input class="mySearch" formControlName="description" placeholder="Take a note...">
+            </div>
+            <div *ngIf="Show">
+                <div class="ic">
+                    <!-- <div>
+                    <app-icon></app-icon>
+                </div> -->
+                    <div class="close">
+                        <button (click)="close()">Close</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
