@@ -4,7 +4,7 @@
 }
 
 .InnerDiv {
-  //  border: 1px solid white;
+    border: 1px solid white;
     padding: 2px 10px;
     border-radius: 8px;
     box-sizing: border-box;
@@ -25,8 +25,7 @@
     line-height: 1.5rem;
     text-decoration: center;
     margin-bottom: 10px;
-    
-    
+    background-color: transparent;
 }  
 
 .mySearch {
@@ -43,6 +42,7 @@
     line-height: 1.5rem;
     text-decoration: center;
     margin-bottom: 10px;
+    background-color: transparent;
 }
 .pin{
     height: 25px;
@@ -55,23 +55,7 @@
     width: 20px;
     height: 25px;
 }
-// .divImg1{
-//     border: 10px;
-//     width: 25px;
-//     height: 25px;
-//    // margin: 0 5px;
-  
-// }
 
-// .divImg{
-  
-//     padding-left: 30px;
-//     border: 10px;
-//         width: 20px;
-//         height: 25px;
-//     margin: 0 5px;
-
-// }
 .ic {
    display: flex;
     flex-direction:row;
