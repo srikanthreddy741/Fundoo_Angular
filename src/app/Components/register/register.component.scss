@@ -1,7 +1,7 @@
 .outer{
     padding: 0px 0px 0px 30px;
     border: 1px solid rgb(220, 213, 213);
-    border-radius: 8px;
+    border-radius: 10px;
     margin-top: 2.5%;
     margin-left: 24%;
     height: 90%;
@@ -26,24 +26,20 @@
 .fundo{
     margin:20px;
     text-align: left;
-   // margin-top: -30px;
+    margin-bottom: -30px;
 }
 .user{
     text-align: justify;
     margin: 20px;
-   // margin-bottom: -10px;
+    margin-bottom: -10px;
     
 }
 
 .name{
-    text-align: justify;
-   // margin-bottom: 20px;  
+    text-align: justify; 
     display: block;
     padding-left: 20px ;
-    width: 58vh;
-   // margin-top: 30px;
-   
-    
+    width: 58vh;    
     
 }
 .myAccount{
@@ -66,14 +62,11 @@
     margin: 20px;
 }
 .sign{
-    margin-left: -223px;
-    margin-right: 90px;
-    min-width: 120px;
+    margin-right: 323px;
+     
 }
 .next{
- //   margin-top:10vh;
-   margin-right: -29vh;
    background-color: blue;
     color: rgb(254, 254, 254);
-    margin-left: 150px;
+ 
 }

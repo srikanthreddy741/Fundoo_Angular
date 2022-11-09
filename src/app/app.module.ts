@@ -7,6 +7,7 @@ import { LoginComponent } from './Components/login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
+import { FlexLayoutModule } from "@angular/flex-layout";
 import { ForgotpasswordComponent } from './Components/forgotpassword/forgotpassword.component';
 import { ResetpasswordComponent } from './Components/resetpassword/resetpassword.component';
 import {MatButtonModule} from '@angular/material/button';
@@ -24,7 +25,8 @@ import { TrashComponent } from './Components/trash/trash.component';
 import { CreateNoteComponent } from './Components/create-note/create-note.component';
 import { DisplayNoteComponent } from './Components/display-note/display-note.component';
 import { IconComponent } from './Components/icon/icon.component';
-
+import {MatMenuModule} from '@angular/material/menu';
+import {MatCardModule} from '@angular/material/card';
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,6 +51,7 @@ import { IconComponent } from './Components/icon/icon.component';
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
+    FlexLayoutModule,
     ReactiveFormsModule,
     HttpClientModule,
     MatListModule,
@@ -56,7 +59,8 @@ import { IconComponent } from './Components/icon/icon.component';
     MatToolbarModule,
     MatIconModule,
     MatExpansionModule,
-    
+    MatMenuModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { NoteService } from 'src/app/service/noteservice/note.service';
 
 
 @Component({
@@ -12,7 +13,7 @@ export class CreateNoteComponent implements OnInit {
   Show = false;
   title: any;
   description: any;
-  constructor(private formBuilder:FormBuilder) { }
+  constructor(private formBuilder:FormBuilder,private note :NoteService) { }
 
   ngOnInit(): void {
     this.createnoteForm = this.formBuilder.group({
@@ -23,9 +24,16 @@ export class CreateNoteComponent implements OnInit {
   isshow() {
     this.Show = true;
   }
-  close(){
+  close() {
     this.Show=false;
-  }
 
- 
+    console.log(this.createnoteForm.value.title, this.createnoteForm.value.description)
+    let data={
+      title:this.createnoteForm.value.title,
+      description:this.createnoteForm.value.description,
+    }
+     this.note.CreateNotes(data).subscribe((result: any) => console.log(result))
+  }
 }
+
+

@@ -1,17 +1,23 @@
 <form [formGroup]="createnoteForm">
     <div class="OuterDiv">
         <div class="InnerDiv">
-            <div *ngIf="Show">
+            <div fxLayout="row" fxLayoutAlign="none end"  *ngIf="Show"   >
                 <input class="search" formControlName="title" placeholder="Title">
+                <img class="pin"  src="../../../assets/push_pin_FILL0_wght400_GRAD0_opsz48.svg">
             </div>
-            <div *ngIf="!Show || Show" (click)="isshow()">
+            <div *ngIf="!Show || Show" (click)="isshow()"fxLayout="row" fxLayoutAlign="space-between center">
                 <input class="mySearch" formControlName="description" placeholder="Take a note...">
+                <div class="img" *ngIf="!Show" >
+                    <img  src="../../../assets/check_box_FILL0_wght400_GRAD0_opsz48.svg">
+                    <img  src="../../../assets/brush_FILL0_wght400_GRAD0_opsz48.svg">
+                    <img  src="../../../assets/image_FILL0_wght400_GRAD0_opsz48.svg">
+                </div>
             </div>
             <div *ngIf="Show">
                 <div class="ic">
-                    <!-- <div>
-                    <app-icon></app-icon>
-                </div> -->
+                    <div>
+                        <app-icon></app-icon>
+                    </div>
                     <div class="close">
                         <button (click)="close()">Close</button>
                     </div>

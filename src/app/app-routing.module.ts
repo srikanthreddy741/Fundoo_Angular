@@ -10,6 +10,9 @@ import { RegisterComponent } from './Components/register/register.component';
 import { ResetpasswordComponent } from './Components/resetpassword/resetpassword.component';
 import { TrashComponent } from './Components/trash/trash.component';
 
+
+
+
 const routes: Routes = [
 {path:'register',component:RegisterComponent},
 {path:'login',component:LoginComponent},
@@ -17,10 +20,12 @@ const routes: Routes = [
 {path:'resetpassword',component:ResetpasswordComponent},
 {path:'dashboard',component:DashboardComponent,
 children:[
+  {path:'create',component: CreateNoteComponent},
   {path:'Notes',component:GetallnotesComponent},
-  {path:'create',component:CreateNoteComponent},
   {path:'Archive',component:ArchiveComponent},
-  {path:'Trash',component:TrashComponent}
+  {path:'Trash',component:TrashComponent},
+
+  
 ]
 }
 ];

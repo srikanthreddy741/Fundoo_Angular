@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-display-note',
@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./display-note.component.scss']
 })
 export class DisplayNoteComponent implements OnInit {
+  @Input() childMessage:any;
 
   constructor() { }
 

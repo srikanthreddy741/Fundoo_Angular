@@ -26,12 +26,13 @@ onSubmit() {
     console.log("valid data",this.loginForm.value);
     console.log("do api call");
     //do api call
-    let fundo={
+    let data={
       email:this.loginForm.value.Emailid,
       password:this.loginForm.value.Password
     }
-    this.user.register(fundo).subscribe((result:any)=>{
-      console.log(fundo);
+    this.user.login(data).subscribe((result:any)=>{
+      console.log(result);
+      localStorage.setItem('token',result.data)
     })
   }else{
     console.log("invalid data",this.loginForm.value);
