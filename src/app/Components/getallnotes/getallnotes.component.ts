@@ -15,10 +15,11 @@ export class GetallnotesComponent implements OnInit {
     this.getAllNote();
     
   }
+  
   getAllNote(){
    this.note.getNote().subscribe((response:any)=>{
       console.log(response);
-      this.noteArray=response.data.data;
+      this.noteArray=response.data;
       // this.noteArray=this.noteArray.reverse()
        console.log(this.noteArray);
        

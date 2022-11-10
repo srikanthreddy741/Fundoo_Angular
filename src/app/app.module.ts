@@ -16,6 +16,7 @@ import { HttpClientModule} from '@angular/common/http';
 import { DashboardComponent } from './Components/dashboard/dashboard.component';
 import {MatListModule} from '@angular/material/list';
 import {MatSidenavModule} from '@angular/material/sidenav';
+import { FormsModule } from '@angular/forms';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatExpansionModule} from '@angular/material/expansion';
@@ -26,7 +27,9 @@ import { CreateNoteComponent } from './Components/create-note/create-note.compon
 import { DisplayNoteComponent } from './Components/display-note/display-note.component';
 import { IconComponent } from './Components/icon/icon.component';
 import {MatMenuModule} from '@angular/material/menu';
+import { MatDialogModule } from '@angular/material/dialog';
 import {MatCardModule} from '@angular/material/card';
+import { UpdatenoteComponent } from './Components/updatenote/updatenote.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,6 +44,7 @@ import {MatCardModule} from '@angular/material/card';
     CreateNoteComponent,
     DisplayNoteComponent,
     IconComponent,
+    UpdatenoteComponent,
  
 
   ],
@@ -60,7 +64,9 @@ import {MatCardModule} from '@angular/material/card';
     MatIconModule,
     MatExpansionModule,
     MatMenuModule,
-    MatCardModule
+    MatCardModule,
+    FormsModule ,
+    MatDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

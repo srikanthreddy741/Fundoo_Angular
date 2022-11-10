@@ -33,4 +33,17 @@ getNote(){
     return this.http.getservice("https://localhost:44307/api/Note/GetNote", true,header)
 
 }
+
+archivenote(data: any){
+
+   console.log(data,this.token);
+  
+  let header={
+    headers:new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization':'Bearer '+this.token
+    })
+  }
+ return this.http.putService("https://localhost:44307/api/Note/Archive?noteId", data, true,header)
+}
 }

@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { UpdatenoteComponent } from '../updatenote/updatenote.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-display-note',
@@ -8,9 +10,21 @@ import { Component, Input, OnInit } from '@angular/core';
 export class DisplayNoteComponent implements OnInit {
   @Input() childMessage:any;
 
-  constructor() { }
+  constructor(public dialog: MatDialog) { }
 
   ngOnInit(): void {
+  }
+  openDialog(note:any): void {
+    const dialogRef = this.dialog.open(UpdatenoteComponent, {
+      width: '500px',
+      
+      data: note    
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+  
+    });
   }
 
 }
