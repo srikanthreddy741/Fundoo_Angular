@@ -1,14 +1,12 @@
-<div fxLayout="row wrap" fxLayoutGap="10px grid" style="padding-top: 2%; padding-left: 10%;">
-    <div *ngFor="let notes of childMessage">
+<div class="boxsize">
+    <div *ngFor="let notes of childMessage" class="con">
         <mat-card class="card">
-
-            <mat-card-title style="padding:8px;" (click)="openDialog(notes)">{{notes.title}} </mat-card-title>
-        
-                
-                    <p style="color: aquamarine;" (click)="openDialog(notes)">{{notes.discription}}</p>
-       
-            <div class="icondiv" FxLayoutAlign="space-between centre">
-                <app-icon></app-icon>
+            <div>
+                <h2 (click)="openDialog(notes)">{{notes.title}}</h2>
+                <p (click)="openDialog(notes)">{{notes.description}}</p>
+            </div>
+            <div class="con" >
+                <app-icon [notecard]="notes" ></app-icon>
 
             </div>
         </mat-card>

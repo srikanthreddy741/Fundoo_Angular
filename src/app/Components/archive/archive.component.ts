@@ -7,21 +7,20 @@ import { NoteService } from 'src/app/service/noteservice/note.service';
   styleUrls: ['./archive.component.scss']
 })
 export class ArchiveComponent implements OnInit {
-  archivelist:any;
-
+  archiveList: any;
   constructor(private note:NoteService) { }
 
   ngOnInit(): void {
-    this.getallarchive();
+    this.getArchiveNotes();
   }
-  getallarchive(){
-    this.note.getNote().subscribe((response:any)=>{
-    console.log(response)
-    this.archivelist=response.filter((a:any)=>{
-  
-    })
-    console.log(this.archivelist);  
+getArchiveNotes(){
+  this.note.getNote().subscribe((response:any)=>{
+   this.archiveList=response.data;
+   this.archiveList.reverse();
+   this.archiveList=this.archiveList.filter((object:any)=>{
+    return object.archive==true;
+   })
+   console.log("Archive notes "+this.archiveList);
   })
-  
-  }
+}
 }

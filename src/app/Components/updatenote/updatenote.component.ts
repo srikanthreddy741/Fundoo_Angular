@@ -10,26 +10,27 @@ import { NoteService } from 'src/app/service/noteservice/note.service';
 export class UpdatenoteComponent implements OnInit {
   title: any
   description: any
+  id: any
+  constructor(private notes:NoteService , 
+     public dialogRef: MatDialogRef<UpdatenoteComponent>, 
+     @Inject(MAT_DIALOG_DATA) public data: any) {
+    this.title=data.title;
+    this.description=data.description;
+    this.id=data.noteId;
+   }
 
-  constructor(public note: NoteService,
-    public dialogRef: MatDialogRef<UpdatenoteComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: any) { }
-
-
-    ngOnInit(): void {
-      console.log(this.data);
-      this.title = this.data.title;
-      this.description = this.data.description;
-      
+  ngOnInit(): void {
+  }
+  onNoClick() {
+    let reqData = {
+      title: this.title,
+      description: this.description,
+      noteId: this.id,
     }
-  onNoClick(): void {
-    console.log(this.title,this.description);
-    let data ={ 
-      title:this.title,
-      description:this.description,
-      
-    }
-    
-    this.dialogRef.close();
+    this.notes.updateNote(reqData, this.id).subscribe((response:any) =>{ 
+      console.log("update response", response); 
+            
+    })
+    this.dialogRef.close()
   }
 }

@@ -1,25 +1,26 @@
-.innDiv{
-    display: flex;
+
+.boxsize
+{
+  display: flex; 
+  flex-flow: row wrap;
+  padding-left: 34px;
+
 }
-.OutDiv{
-    display: flex;
-    border: 1px solid rgb(186, 184, 184);
-    padding: 2px 1px;
-    border-radius: 8px;
-    box-sizing: border-box;
-    box-shadow: 0 3px 3px 3px rgb(222, 222, 222);
+.con{
+  padding-right: 30px;
+  display: flex;
+  padding-top: 5px;
+  
+
 }
+
 .card{
   
-    width:250px;
-    max-height:200px;
-    margin:25px auto 16px auto;
-    border: 1px solid rgb(186, 184, 184);
-  //  padding: 20px 15px 10px 20px;
-    border-radius: 8px;
-    box-sizing: border-box;
-  //  box-shadow: 0 3px 3px 3px rgb(222, 222, 222);
-}
-.icondiv{
-    width:10px;
+  width:270px;
+  max-height:150px;
+  margin:15px auto 16px auto;
+  border: 1px solid rgb(186, 184, 184);
+//  padding: 20px 15px 10px 20px;
+  border-radius: 8px;
+  box-sizing: border-box;
 }
