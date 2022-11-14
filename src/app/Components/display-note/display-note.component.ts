@@ -11,7 +11,7 @@ import { EventEmitter } from 'stream';
 export class DisplayNoteComponent implements OnInit {
   @Input() childMessage:any;
   note:any;
-//  @Output()  = new EventEmitter<any>();
+
 
 
   constructor(public dialog: MatDialog) { }

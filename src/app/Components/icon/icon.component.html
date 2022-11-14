@@ -1,32 +1,32 @@
 <div class="OuterDiv">
 
     <div role="button" class="add">
-        <img class="divImg" src="../../../assets/add_alert_FILL0_wght400_GRAD0_opsz48.svg">
+        <img  class="divImg" src="../../../assets/add_alert_FILL0_wght400_GRAD0_opsz48.svg">
     </div>
     <div role="button" class="add">
-        <img class="divImg" src="../../../assets/person_add_FILL0_wght400_GRAD0_opsz48.svg">
+        <img  class="divImg" src="../../../assets/person_add_FILL0_wght400_GRAD0_opsz48.svg">
     </div>
 
     <div role="button" class="add"  matTooltip="Background color" [matMenuTriggerFor]="color">
-        <img class="divImg" src="../../../assets/palette_FILL0_wght400_GRAD0_opsz48.svg">
+        <img  class="divImg" src="../../../assets/palette_FILL0_wght400_GRAD0_opsz48.svg">
         <mat-menu #color="matMenu">
-            <div fxLayout="row wrap" style="padding-left: 8px;">
-                <div  class="colorBox">
-                    <button class="colors" mat-icon-button mat-raised-button [style.background]="color?.Colorcode"
-                        (click)="getNoteColor(color?.Colorcode)"></button>
+            <div fxLayout="row wrap" fxLayoutAlign="start center" style="padding-left: 3px;">
+                <div *ngFor="let color of colorsArr" class="colorBox">
+                    <button class="colors" (click)="getNoteColor(color?.Colorcode)" mat-icon-button mat-raised-button [style.background]="color?.Colorcode"
+                        ></button>
                 </div>
             </div>
         </mat-menu>
     </div>
     <div role="button" class="add">
-        <img class="divImg" src="../../../assets/image_FILL0_wght400_GRAD0_opsz48.svg">
+        <img  class="divImg" src="../../../assets/image_FILL0_wght400_GRAD0_opsz48.svg">
     </div>
     <div role="button" class="add">
-        <img class="divImg" (click)="onArchive()" src="../../../assets/archive_FILL0_wght400_GRAD0_opsz48.svg">
+        <img  class="divImg" (click)="onArchive()" src="../../../assets/archive_FILL0_wght400_GRAD0_opsz48.svg">
     </div>
 
     <div class="add"  mat-icon-button matTooltip="More" [matMenuTriggerFor]="menu">
-        <img class="divImg" src="../../../assets/more_vert_FILL0_wght400_GRAD0_opsz48.svg">
+        <img  class="divImg" src="../../../assets/more_vert_FILL0_wght400_GRAD0_opsz48.svg">
         <mat-menu #menu="matMenu" >
             <button mat-menu-item class="matmenuBtn" (click)="trash()">Delete note</button>
             <button mat-menu-item class="matmenuBtn">Add Label</button>

@@ -56,9 +56,9 @@ archivenote(data: any){
   }
  return this.http.putService("https://localhost:44307/api/Note/Archive?noteId="+data,{}, true,header)
 }
-trashNote(noteId: any) {
+trashNote(data: any) {
 
-  console.log("token", this.token)
+  console.log(data);
 
   let header = {
     headers: new HttpHeaders({
@@ -66,9 +66,9 @@ trashNote(noteId: any) {
       'Authorization':'Bearer '+ this.token
     })
   }
-  return this.http.putService('https://localhost:44307/api/Note/Trash?noteId='+noteId,{}, true, header)
+  return this.http.putService('https://localhost:44307/api/Note/Trash?noteId='+data,null, true, header)
 }
-getColorNote(id: any,color :any){
+getColorNote(noteId: any){
 
   let header= {
     headers: new HttpHeaders({
@@ -77,7 +77,7 @@ getColorNote(id: any,color :any){
       'Authorization': "Bearer "+this.token
     })
   }
-    return this.http.putService('https://localhost:44307/api/Note/NoteColour?noteId=${Id}&colour=${color}',color,true,header)
+    return this.http.putService('https://localhost:44307/api/Note/NoteColour?noteId=&colour='+noteId,null,true,header)
 
 }
 }

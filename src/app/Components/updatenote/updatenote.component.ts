@@ -22,12 +22,12 @@ export class UpdatenoteComponent implements OnInit {
   ngOnInit(): void {
   }
   onNoClick() {
-    let reqData = {
+    let Data = {
       title: this.title,
       description: this.description,
       noteId: this.id,
     }
-    this.notes.updateNote(reqData, this.id).subscribe((response:any) =>{ 
+    this.notes.updateNote(Data, this.id).subscribe((response:any) =>{ 
       console.log("update response", response); 
             
     })

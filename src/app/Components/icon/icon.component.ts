@@ -11,16 +11,11 @@ export class IconComponent implements OnInit {
   @Input() notecard: any;
   noteId: any;
   isArchive =false; 
-  isTrash: boolean = false;
+  Trash: boolean = false;
+  colorId:any;
   
-  colorsArr =[{Colorcode:"pink"},
-  {Colorcode:"yellow"},
-  {Colorcode:"orange"},
-  {Colorcode:"rgb(255,99,71)"},
-  {Colorcode:"rgb(152,251,152)"},
-  {Colorcode:"Teal"},
-  {Colorcode:"rgb(106,90,205)"},
-  {Colorcode:"rgb(240,230,140)"},{Colorcode:"rgb(238,130,238)"},{Colorcode:"rgb(255,160,122)"}];
+  
+  colorsArr =[{Colorcode:"pink"},{Colorcode:"yellow"},{Colorcode:"orange"},{Colorcode:"rgb(255,99,71)"},{Colorcode:"rgb(152,251,152)"},{Colorcode:"Teal"},{Colorcode:"rgb(106,90,205)"},{Colorcode:"rgb(240,230,140)"},{Colorcode:"rgb(238,130,238)"},{Colorcode:"rgb(255,160,122)"}];
 
   constructor(private note:NoteService) { }
 
@@ -40,19 +35,19 @@ export class IconComponent implements OnInit {
     })
   }
   trash() {
-    let data ={ 
-      noteId:this.notecard.noteId,
-      
-    }
+   
     this.note.trashNote(this.notecard.noteId).subscribe((response: any) => {
       console.log("Note Trash successfull",response);
-      // window.location.reload();
+      
     })
   }
-  getNoteColor(colour :any){
-    this.note.getColorNote(this.notecard.noteId,colour).subscribe((response:any)=>{
-      console.log(response);
-      // window.location.reload();
+
+  getNoteColor(color :any){
+      this.colorId=this.notecard.color=color;
+
+    this.note.getColorNote(this.notecard.noteId).subscribe((response:any)=>{
+      console.log("color note Sucessfull",response);
+      
     })
   }
   

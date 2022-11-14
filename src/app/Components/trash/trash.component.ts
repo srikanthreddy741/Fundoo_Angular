@@ -12,16 +12,16 @@ export class TrashComponent implements OnInit {
   constructor(private note: NoteService) { }
 
   ngOnInit(): void {
+    this.TrashList()
   }
 
   TrashList() {
     console.log('Get trash list successful');
     this.note.getNote().subscribe((response: any) => {
-      console.log(response);
       this.trashList = response.data;
       this.trashList.reverse();
       this.trashList = this.trashList.filter((object: any) => {
-        return object.trash == true;
+        return object.trash==true;
       })
       console.log("trash list", this.trashList);
     })

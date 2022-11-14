@@ -7,25 +7,26 @@ import { NoteService } from 'src/app/service/noteservice/note.service';
   styleUrls: ['./getallnotes.component.scss']
 })
 export class GetallnotesComponent implements OnInit {
-  noteArray:any;  
+  noteArray: any;
 
-  constructor(private note:NoteService) { }
+  constructor(private note: NoteService) { }
 
   ngOnInit(): void {
     this.getAllNote();
-    
+
   }
-  
-  getAllNote(){
-   this.note.getNote().subscribe((response:any)=>{
-      console.log(response);
-      this.noteArray=response.data;
-      // this.noteArray=this.noteArray.reverse()
-       console.log(this.noteArray);
-       
+
+  getAllNote() {
+    this.note.getNote().subscribe((response: any) => {
+      console.log(response.data);
+      this.noteArray = response.data;
+      this.noteArray = this.noteArray.reverse()
+      this.noteArray = this.noteArray.filter((object: any) => {
+      return object.archive == false && object.trash == false;
+
       })
 
-    
+
+  })
   }
-  
 }
