@@ -1,7 +1,8 @@
-import { Component, OnInit,Input } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { NoteService } from 'src/app/service/noteservice/note.service';
 import { TrashComponent } from '../trash/trash.component';
 import { ArchiveComponent } from '../archive/archive.component';
+import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-icon',
   templateUrl: './icon.component.html',
@@ -10,47 +11,84 @@ import { ArchiveComponent } from '../archive/archive.component';
 export class IconComponent implements OnInit {
   @Input() notecard: any;
   noteId: any;
-  isArchive =false; 
-  Trash: boolean = false;
-  colorId:any;
-  
-  
-  colorsArr =[{Colorcode:"pink"},{Colorcode:"yellow"},{Colorcode:"orange"},{Colorcode:"rgb(255,99,71)"},{Colorcode:"rgb(152,251,152)"},{Colorcode:"Teal"},{Colorcode:"rgb(106,90,205)"},{Colorcode:"rgb(240,230,140)"},{Colorcode:"rgb(238,130,238)"},{Colorcode:"rgb(255,160,122)"}];
+  isArchive: boolean = false;
+  isTrash: boolean = false;
+  colorId: any;
 
-  constructor(private note:NoteService) { }
+
+  colorsArr = [{ Colorcode: "#f28b82" }, { Colorcode: "#fbbc04" }, { Colorcode: "#fff475" }, { Colorcode: "#ccff90" }, { Colorcode: "#a7ffeb" }, { Colorcode: "#cbf0f8" }, { Colorcode: "#aecbfa" }, { Colorcode: "#d7aefb" }, { Colorcode: "#fdcfe8" }, { Colorcode: "#e6c9a8" }, { Colorcode: "#e8eaed" }, { Colorcode: "white" }];
+
+  constructor(private note: NoteService, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
-  
+    let componentNote = this.activatedRoute.snapshot.component;
+    if (componentNote == TrashComponent) {
+      this.isTrash = true;
+    }
+
+    if (componentNote == ArchiveComponent) {
+      this.isArchive = true;
+    }
+
   }
-  
-  onArchive(){
-    let data ={ 
-      noteId:this.notecard.noteId,
-      
+
+  onArchive() {
+    let data = {
+      noteId: this.notecard.noteId,
+
     }
     console.log(data);
     this.note.archivenote(this.notecard.noteId).subscribe((Response: any) => {
-      console.log("Note Archived Successfull",Response);
-    
+      console.log("Note Archived Successfull", Response);
+
     })
   }
   trash() {
-   
+
     this.note.trashNote(this.notecard.noteId).subscribe((response: any) => {
-      console.log("Note Trash successfull",response);
-      
+      console.log("Note Trash successfull", response);
+
     })
   }
 
-  getNoteColor(color :any){
-      this.colorId=this.notecard.color=color;
-
-    this.note.getColorNote(this.notecard.noteId).subscribe((response:any)=>{
-      console.log("color note Sucessfull",response);
-      
+  getNoteColour(colour:any)
+  {
+    this.noteId = this.notecard.colour = colour;
+    let Data = {
+      colour: colour,
+      noteId:this.notecard.noteId,      
+    };
+    this.note.getColourNote(Data).subscribe((response: any) => {
+      console.log(response);
+     
+      console.log("colour", Data)
     })
   }
-  
+  restore() {
+    let data = {
+      noteId: this.notecard.noteId,
+      trash:false,
+    }
+  this.note.archivenote(data).subscribe((response: any) => {
+    console.log("Note is removed from trash");
 
+    console.log(response);
+
+  })
   }
+unarchive(){
+  this.note.unArchive(this.notecard.noteId).subscribe((response: any) => {
+    console.log("unarchive note sucessfull", response);
+})
 
+}
+deletenotes() {
+ 
+  this.note.deletenote(this.notecard.noteId).subscribe((response: any) => {
+    console.log("Note is deleted");
+
+    console.log(this.notecard = response);
+
+  })
+}
+}

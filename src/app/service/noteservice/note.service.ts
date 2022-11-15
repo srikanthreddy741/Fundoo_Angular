@@ -54,7 +54,7 @@ archivenote(data: any){
       'Authorization':'Bearer '+this.token
     })
   }
- return this.http.putService("https://localhost:44307/api/Note/Archive?noteId="+data,{}, true,header)
+ return this.http.putService('https://localhost:44307/api/Note/Archive?noteId='+data,{}, true,header)
 }
 trashNote(data: any) {
 
@@ -68,7 +68,8 @@ trashNote(data: any) {
   }
   return this.http.putService('https://localhost:44307/api/Note/Trash?noteId='+data,null, true, header)
 }
-getColorNote(noteId: any){
+
+getColourNote(data: any){
 
   let header= {
     headers: new HttpHeaders({
@@ -77,7 +78,43 @@ getColorNote(noteId: any){
       'Authorization': "Bearer "+this.token
     })
   }
-    return this.http.putService('https://localhost:44307/api/Note/NoteColour?noteId=&colour='+noteId,null,true,header)
+    return this.http.putService("https://localhost:44307/api/Note/NoteColour?noteId=&colour="+data,null,true,header)
 
 }
+deletenote(data:any){
+
+  let header= {
+    headers: new HttpHeaders({
+
+      'Content-type': 'application/json',
+      'Authorization': "Bearer "+this.token
+    })
+  }
+    return this.http.putService('https://localhost:44307/api/Note/DeleteNote?noteId='+data,{},true,header)
 }
+unArchive(data:any){
+
+  let header= {
+    headers: new HttpHeaders({
+
+      'Content-type': 'application/json',
+      'Authorization': "Bearer "+this.token
+    })
+  }
+  return this.http.putService("https://localhost:44307/api/Note/Archive?noteId="+data,{}, true,header)
+}
+
+restoretrash(data: any) {
+
+  console.log(data);
+
+  let header = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization':'Bearer '+ this.token
+    })
+  }
+  return this.http.putService('https://localhost:44307/api/Note/Trash?noteId='+data,{}, true, header)
+}
+}
+

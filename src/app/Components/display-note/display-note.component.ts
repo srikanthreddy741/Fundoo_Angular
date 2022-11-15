@@ -1,7 +1,7 @@
-import { Component, Input, OnInit,Output } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { UpdatenoteComponent } from '../updatenote/updatenote.component';
 import { MatDialog } from '@angular/material/dialog';
-import { EventEmitter } from 'stream';
+
 
 @Component({
   selector: 'app-display-note',

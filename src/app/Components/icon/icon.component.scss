@@ -18,10 +18,21 @@
         height: 23px;
         //padding-left: 20px;
     }
-    // cursor: pointer;
-    // :hover{
-    //     border-radius: 80%;
-    //     background-color: #f1f3f4;
-    // }
+}
+    .colour{
+        height: 130px;
+        width: 170px;
+       // border: 1px solid blue;
+      display: flex;
+      justify-content: space-around;
+    }
+
+.colors{
+    height: 40px;
+    width: 40px;
+   // border: 1px solid red;
+}
+.icons{
+    height: 30px;
 }
 
